@@ -2,7 +2,7 @@ import 'Views/App.css';
 import logo from 'Assets/logo.svg';
 
 function App() {
-  console.log("hello world!");
+  console.log("hello world my little world!");
   return (
     <div className="App">
       <header className="App-header">
