@@ -29,31 +29,6 @@
       "pre-commit": "lint-staged"
     }
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "plugin:prettier/recommended",
-      "prettier/prettier"
-    ],
-    "plugins": [
-      "prettier"
-    ],
-    "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "singlequote": true
-        }
-      ]
-    },
-    "env": {
-      "browser": true,
-      "node": true,
-      "es6": true
-    },
-    "parser": "@babel/eslint-parser"
-  },
   "browserslist": {
     "production": [
       ">0.2%",
