@@ -38,8 +38,8 @@ const Grade = styled.div`
   margin-bottom: inherit;
   background-color: ${(props) => {
     if (parseInt(props.grade) >= 2 && parseInt(props.grade) < 3) return 'red';
-    if (parseInt(props.grade) >= 3 && parseInt(props.grade) < 4) return theme.colors.warning;
-    if (parseInt(props.grade) >= 4 && parseInt(props.grade) < 5) return 'green';
+    if (parseInt(props.grade) >= 3 && parseInt(props.grade) < 4) return 'green';
+    if (parseInt(props.grade) >= 4 && parseInt(props.grade) < 5) return theme.colors.warning;
     if (parseInt(props.grade) === 5) return 'yellow';
   }};
 `;
@@ -60,6 +60,8 @@ const DescriptPAttendants = styled.p`
   font-size: ${theme.fontSize.s};
 `;
 
+const showId = (index) => alert('this student id is: ' + index);
+
 export function UserListItem(props) {
   return (
     <Wrapper>
@@ -70,7 +72,7 @@ export function UserListItem(props) {
         <DescriptPName>{props.userData.name}</DescriptPName>
         <DescriptPAttendants>attendants: {props.userData.attendants}</DescriptPAttendants>
       </Descript>
-      <Button />
+      <Button onClick={() => showId(props.userData.id)} />
     </Wrapper>
   );
 }

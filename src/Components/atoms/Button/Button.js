@@ -14,6 +14,6 @@ const StyledButton = styled.button`
   float: right;
 `;
 
-const Button = () => <StyledButton>X</StyledButton>;
+const Button = (props) => <StyledButton {...props}>X</StyledButton>;
 
 export default Button;
