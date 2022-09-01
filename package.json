@@ -11,6 +11,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "sass": "^1.54.6",
+    "style-components": "^0.1.0",
+    "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -28,6 +31,32 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "plugin:prettier/recommended",
+      "prettier/prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "singlequote": true,
+          "printWidth": 150
+        }
+      ]
+    },
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    },
+    "parser": "@babel/eslint-parser"
   },
   "browserslist": {
     "production": [

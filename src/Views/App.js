@@ -1,24 +1,42 @@
 import 'Views/App.css';
-import logo from 'Assets/logo.svg';
+import { myData } from 'data/data';
+import 'Components/molecules/UserListItem/UserListItem';
+import { UserListItem } from 'Components/molecules/UserListItem/UserListItem';
+import styled, { ThemeProvider } from 'styled-components';
+import GlobalStyle from 'Assets/styles/globalStyles';
+import theme from 'Assets/styles/theme';
+
+const Container = styled.div`
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+`;
+
+const Wrapper = styled.div`
+  background-color: white;
+  width: 50%;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.3);
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo"/>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Container>
+        <Wrapper>
+          <ul>
+            {myData.map((userData) => (
+              <UserListItem userData={userData} key={userData.id} />
+            ))}
+          </ul>
+        </Wrapper>
+      </Container>
+    </ThemeProvider>
   );
 }
 
