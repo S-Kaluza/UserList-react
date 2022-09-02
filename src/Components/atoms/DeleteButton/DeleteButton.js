@@ -2,9 +2,8 @@ import styled from 'styled-components';
 
 const StyledButton = styled.button`
   display: initial;
-  position: absolute;
+  position: static;
   color: white;
-  right: 29%;
   width: 2em;
   height: 2em;
   background-color: black;
@@ -14,6 +13,6 @@ const StyledButton = styled.button`
   float: right;
 `;
 
-const Button = (props) => <StyledButton {...props}>X</StyledButton>;
+const DeleteButton = (props) => <StyledButton {...props}>X</StyledButton>;
 
-export default Button;
+export default DeleteButton;

@@ -1,7 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import styled from 'styled-components';
-import Button from 'Components/atoms/Button/Button';
+import DeleteButton from 'Components/atoms/DeleteButton/DeleteButton';
 import theme from 'Assets/styles/theme';
 
 const Wrapper = styled.li`
@@ -29,8 +29,8 @@ const Descript = styled.div`
 `;
 
 const Grade = styled.div`
-  width: 45px;
-  height: 45px;
+  width: 5vw;
+  height: 5vw;
   text-align: center;
   border: 2px solid black;
   border-radius: 75%;
@@ -46,21 +46,22 @@ const Grade = styled.div`
 
 const GradeP = styled.p`
   display: block;
-  text-align: center;
 `;
 
 const DescriptPName = styled.p`
   margin-top: 0px;
   margin-bottom: 0px;
+  text-align: left;
+  width: 30vw;
 `;
 
 const DescriptPAttendants = styled.p`
   margin-top: 0px;
   margin-bottom: 0px;
+  text-align: left;
+  width: 30vw;
   font-size: ${theme.fontSize.s};
 `;
-
-const showId = (index) => alert('this student id is: ' + index);
 
 export function UserListItem(props) {
   return (
@@ -72,7 +73,7 @@ export function UserListItem(props) {
         <DescriptPName>{props.userData.name}</DescriptPName>
         <DescriptPAttendants>attendants: {props.userData.attendants}</DescriptPAttendants>
       </Descript>
-      <Button onClick={() => props.deleteUser(props.userData.id)} />
+      <DeleteButton onClick={() => props.deleteUser(props.userData.id)} />
     </Wrapper>
   );
 }
