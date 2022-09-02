@@ -72,7 +72,7 @@ export function UserListItem(props) {
         <DescriptPName>{props.userData.name}</DescriptPName>
         <DescriptPAttendants>attendants: {props.userData.attendants}</DescriptPAttendants>
       </Descript>
-      <Button onClick={() => showId(props.userData.id)} />
+      <Button onClick={() => props.deleteUser(props.userData.id)} />
     </Wrapper>
   );
 }
